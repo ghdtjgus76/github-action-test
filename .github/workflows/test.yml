@@ -24,9 +24,21 @@ jobs:
           version: 8
           run_install: false
 
+      - name: Cache Pnpm Store
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.pnpm-store
+            node_modules
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install Dependency
         run: pnpm install --no-frozen-lockfile
         working-directory: packages/wow-ui
+        env:
+          PNPM_STORE_SERVER: ${{ runner.workspace }}/.pnpm-store
 
       - name: Run Tests
         run: pnpm test
