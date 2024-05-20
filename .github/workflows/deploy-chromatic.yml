@@ -49,3 +49,4 @@ jobs:
           workingDir: packages/wow-ui/src
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.TOKEN }}
+
