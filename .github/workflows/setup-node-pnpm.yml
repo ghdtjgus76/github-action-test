@@ -1,0 +1,23 @@
+name: "setup-node-pnpm"
+
+on:
+  workflow_call:
+
+jobs:
+  setup-node-pnpm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install Pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: false
+
+      - name: Install Dependency
+        run: pnpm install --no-frozen-lockfile
+        working-directory: packages/wow-ui
