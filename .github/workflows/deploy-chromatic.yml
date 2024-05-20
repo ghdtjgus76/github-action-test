@@ -10,6 +10,7 @@ jobs:
     uses: ghdtjgus76/github-action-test/.github/workflows/setup-node-pnpm.yml@main
   chromatic-deployment:
     runs-on: ubuntu-latest
+    needs: setup-node-pnpm
     steps:
       - uses: actions/checkout@v2
         with:
