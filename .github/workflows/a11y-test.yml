@@ -2,13 +2,11 @@ name: "a11y-test"
 
 on:
   push:
-    branches:
-        main
+    branches: main
 
 jobs:
   accessibility:
     runs-on: ubuntu-latest
-    needs: setup-node-pnpm
     steps:
       - uses: actions/checkout@v2
         with:
