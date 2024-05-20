@@ -2,7 +2,9 @@
   "name": "wowds-ui",
   "version": "0.0.6",
   "description": "",
-  "author": "gdsc-hongik",
+  "author": {
+    "name": "gdsc-hongik"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GDSC-Hongik/wow-design-system.git",
