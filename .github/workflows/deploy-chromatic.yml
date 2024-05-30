@@ -39,6 +39,9 @@ jobs:
         env:
           PNPM_STORE_SERVER: ${{ runner.workspace }}/.pnpm-store
 
+      - name: Build packages
+        run: pnpm build
+
       - name: Create Styled-system Folder
         run: pnpm panda init
         working-directory: packages/wow-ui
@@ -51,9 +54,6 @@ jobs:
           else
             echo "styled-system folder exists."
           fi
-
-      - name: Build packages
-        run: pnpm build
 
       - name: Publish Chromatic
         id: chromatic
