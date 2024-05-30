@@ -40,7 +40,7 @@ jobs:
           PNPM_STORE_SERVER: ${{ runner.workspace }}/.pnpm-store
 
       - name: Create Styled-system Folder
-        run: pnpm panda codegen
+        run: pnpm panda init
 
       - name: Build packages
         run: pnpm build
