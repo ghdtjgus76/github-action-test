@@ -45,7 +45,15 @@ jobs:
 
       - name: Create Styled-system Folder
         run: pnpm panda init
-        working-directory: packages/wow-ui
+      
+      - name: Verify Styled-system Folder
+        run: |
+          if [ ! -d "packages/wow-ui/styled-system" ]; then
+            echo "styled-system folder does not exist."
+            exit 1
+          else
+            echo "styled-system folder exists."
+          fi
 
       - name: Start Storybook
         run: |
