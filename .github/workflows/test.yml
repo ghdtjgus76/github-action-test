@@ -40,6 +40,9 @@ jobs:
         env:
           PNPM_STORE_SERVER: ${{ runner.workspace }}/.pnpm-store
 
+      - name: Install Pandacss
+        run: pnpm install @pandacss/dev
+
       - name: Create Styled-system Folder
         run: pnpm panda init
 
