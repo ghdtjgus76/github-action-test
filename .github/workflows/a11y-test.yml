@@ -43,6 +43,9 @@ jobs:
         run: pnpm dlx playwright install --with-deps
         working-directory: packages/wow-ui
 
+      - name: Create Styled-system Folder
+        run: pnpm panda codegen
+
       - name: Start Storybook
         run: |
           nohup pnpm storybook &
