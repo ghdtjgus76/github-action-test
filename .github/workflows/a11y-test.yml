@@ -45,6 +45,7 @@ jobs:
 
       - name: Install Pandacss
         run: pnpm install @pandacss/dev
+        working-directory: packages/wow-ui
 
       - name: Create Styled-system Folder
         run: pnpm panda init
