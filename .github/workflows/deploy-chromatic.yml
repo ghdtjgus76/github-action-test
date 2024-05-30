@@ -41,6 +41,7 @@ jobs:
 
       - name: Create Styled-system Folder
         run: pnpm panda init
+        working-directory: packages/wow-ui
 
       - name: Build packages
         run: pnpm build

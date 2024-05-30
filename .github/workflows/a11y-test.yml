@@ -45,6 +45,7 @@ jobs:
 
       - name: Create Styled-system Folder
         run: pnpm panda init
+        working-directory: packages/wow-ui
 
       - name: Start Storybook
         run: |
